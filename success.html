@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UltiMutt Furends | Pet Care</title>
-  <link rel="shortcut icon" href="./favicon.ico?v=27" />
-  <link rel="icon" href="./favicon.ico?v=27" sizes="any" />
-  <link rel="icon" type="image/png" href="./favicon.png?v=27" />
-  <link rel="apple-touch-icon" href="./favicon.png?v=27" />
+  <link rel="shortcut icon" href="./favicon.ico?v=43" />
+  <link rel="icon" href="./favicon.ico?v=43" sizes="any" />
+  <link rel="icon" type="image/png" href="./favicon.png?v=43" />
+  <link rel="apple-touch-icon" href="./favicon.png?v=43" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Quicksand:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=27" />
+  <link rel="stylesheet" href="./style.css?v=43" />
   <style>
     body{
       min-height:100vh;
@@ -22,11 +22,11 @@
       background:var(--cream);
     }
     .success-card{
-      width:min(720px,92vw);
+      width:min(680px,92vw);
       background:var(--white);
       border:1px solid var(--line);
       border-radius:34px;
-      padding:clamp(30px,5vw,50px);
+      padding:clamp(30px,5vw,48px);
       box-shadow:var(--shadow);
       display:flex;
       flex-direction:column;
@@ -34,25 +34,25 @@
       justify-content:center;
     }
     .success-card img{
-      width:128px;
-      margin:0 auto 22px;
-      background:transparent;
+      width:120px;
+      margin:0 auto 20px;
+      display:block;
     }
     .success-card .eyebrow{
+      margin:0 auto 14px;
       text-align:center;
-      margin:0 auto 16px;
     }
     .success-card h1{
       font-family:'DM Serif Display',serif;
-      font-size:clamp(2.25rem,4.4vw,3.65rem);
-      line-height:1.02;
+      font-size:clamp(2rem,3.4vw,2.85rem);
+      line-height:1;
       margin:0 auto 18px;
       color:var(--brown);
       text-align:center;
-      max-width:590px;
+      max-width:560px;
     }
     .success-card p{
-      max-width:540px;
+      max-width:520px;
       margin:0 auto;
       color:#5a5050;
       font-size:1rem;
@@ -62,7 +62,27 @@
       margin-top:26px;
     }
   </style>
-</head>
+<style>
+/* v44 hero badge tweak */
+.hero-badge,
+.hero-image .hero-badge,
+.hero-card .hero-badge,
+.image-badge,
+.best-furend-badge{
+  width:280px !important;
+  max-width:280px !important;
+  right:8px !important;
+  bottom:8px !important;
+  padding:10px 20px !important;
+}
+.hero-badge *,
+.hero-image .hero-badge *,
+.hero-card .hero-badge *,
+.image-badge *,
+.best-furend-badge *{
+  font-size:0.88em !important;
+}
+</style></head>
 <body>
   <main class="success-card">
     <img src="./logo.png" alt="UltiMutt Furends logo">

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UltiMutt Furends | Pet Care</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="shortcut icon" href="./favicon.ico?v=43" />
+<link rel="icon" href="./favicon.ico?v=43" sizes="any" />
+<link rel="icon" type="image/png" href="./favicon.png?v=43" />
+<link rel="apple-touch-icon" href="./favicon.png?v=43" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css?v=43" />
+<style>
+body{background:var(--cream);color:var(--brown);}
+.pricing-page{min-height:100vh;padding:18px 0 28px;position:relative;overflow-x:hidden;}
+.pricing-wrap{width:min(900px,92vw);margin:0 auto;position:relative;z-index:1;}
+
+.pricing-hero{
+  width:100%;
+  box-sizing:border-box;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:18px 22px 20px;
+  box-shadow:var(--shadow);
+  margin:0 auto 14px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.pricing-hero img{
+  width:112px;
+  margin:0 auto 8px;
+  display:block;
+}
+
+.pricing-hero h1{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(1.75rem,2.35vw,2.35rem) !important;
+  line-height:1.02;
+  margin:0 auto !important;
+  padding:0 !important;
+  color:var(--brown);
+  text-align:center !important;
+  width:auto !important;
+  max-width:none !important;
+  display:inline-block !important;
+  white-space:nowrap;
+  transform:none !important;
+}
+
+.pricing-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:8px auto 10px;width:100%;}
+.pricing-divider span{width:68px;height:1.5px;background:var(--pink);opacity:.85;display:block;}
+.pricing-divider b{font-weight:400;color:var(--pink);font-size:1.25rem;line-height:1;}
+
+.pricing-hero p{max-width:600px;margin:0 auto;color:#5a5050;font-size:.88rem;letter-spacing:.01em;text-align:center;}
+
+.pricing-list{background:transparent;border:0;border-radius:0;padding:0;box-shadow:none;}
+.price-row{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:14px;
+  align-items:center;
+  padding:9px 17px;
+  margin:7px 0;
+  background:#fffefb;
+  border:1px solid rgba(53,42,42,.10);
+  border-radius:16px;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease;
+  box-shadow:0 5px 12px rgba(53,42,42,.035);
+}
+.price-row:hover{transform:translateY(-3px);border-color:rgba(253,174,255,.9);background:#fff7ff;box-shadow:0 13px 26px rgba(253,174,255,.18);}
+.price-row h3{font-family:'DM Serif Display',serif;font-size:clamp(.86rem,1.28vw,1.03rem);line-height:1.08;margin:0;color:var(--brown);}
+.price-row p{margin:0;text-align:right;color:#5a5050;white-space:nowrap;font-weight:600;font-size:.78rem;}
+.price-row p span{font-family:'DM Serif Display',serif;color:var(--pink);font-size:clamp(.98rem,1.45vw,1.22rem);font-weight:400;}
+
+.pricing-footer{margin-top:14px;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:16px;text-align:center;box-shadow:var(--shadow);}
+.pricing-footer p{max-width:620px;margin:0 auto 10px;color:#5a5050;font-size:.86rem;}
+.pricing-footer .btn{display:inline-flex;margin:5px;}
+.secondary-print{background:transparent;color:var(--brown);border:1px solid var(--brown);}
+
+/* larger floating / moving paw prints */
+.pricing-paws{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.pricing-paw{position:absolute;color:rgba(253,174,255,.34);font-size:2.9rem;animation:walkPaw 8s linear infinite;opacity:0;}
+.pricing-paw:nth-child(1){left:3%;top:9%;animation-delay:0s;}
+.pricing-paw:nth-child(2){left:7%;top:25%;animation-delay:1.1s;}
+.pricing-paw:nth-child(3){right:7%;top:13%;animation-delay:2.2s;}
+.pricing-paw:nth-child(4){right:4%;top:36%;animation-delay:3.2s;}
+.pricing-paw:nth-child(5){left:5%;bottom:20%;animation-delay:4.2s;}
+.pricing-paw:nth-child(6){right:8%;bottom:18%;animation-delay:5.3s;}
+@keyframes walkPaw{0%{transform:translateY(24px) rotate(-18deg) scale(.75);opacity:0;}18%{opacity:.55;}50%{transform:translateY(-20px) rotate(10deg) scale(1);opacity:.35;}85%{opacity:.18;}100%{transform:translateY(-78px) rotate(22deg) scale(.8);opacity:0;}}
+
+@media(max-width:680px){
+  .pricing-wrap{width:min(94vw,900px);}
+  .pricing-hero h1{white-space:normal;font-size:clamp(1.65rem,6.5vw,2.15rem) !important;}
+  .price-row{grid-template-columns:1fr;text-align:center;padding:11px 14px;}
+  .price-row p{text-align:center;}
+  .pricing-paw{font-size:2rem;}
+}
+@media print{.pricing-paws,.pricing-footer .btn{display:none;}.pricing-page{padding:0;}.pricing-hero,.price-row,.pricing-footer{box-shadow:none;}}
+</style>
+<style>
+/* v44 hero badge tweak */
+.hero-badge,
+.hero-image .hero-badge,
+.hero-card .hero-badge,
+.image-badge,
+.best-furend-badge{
+  width:280px !important;
+  max-width:280px !important;
+  right:8px !important;
+  bottom:8px !important;
+  padding:10px 20px !important;
+}
+.hero-badge *,
+.hero-image .hero-badge *,
+.hero-card .hero-badge *,
+.image-badge *,
+.best-furend-badge *{
+  font-size:0.88em !important;
+}
+</style></head>
+<body>
+<main class="pricing-page">
+<div class="pricing-paws"><span class="pricing-paw">🐾</span><span class="pricing-paw">🐾</span><span class="pricing-paw">🐾</span><span class="pricing-paw">🐾</span><span class="pricing-paw">🐾</span><span class="pricing-paw">🐾</span></div>
+<div class="pricing-wrap">
+<section class="pricing-hero">
+<img src="./logo.png" alt="UltiMutt Furends logo">
+<h1>Services + Pricing</h1>
+<div class="pricing-divider"><span></span><b>♡</b><span></span></div>
+<p>Pricing is subject to change after reviewing your pet's care needs.</p>
+</section>
+<section class="pricing-list" aria-label="Service pricing list">
+<article class="price-row"><h3>24/7 Constant Care</h3><p><span>$300</span> per night</p></article>
+<article class="price-row"><h3>Overnight Pet Care</h3><p><span>$165</span> per night</p></article>
+<article class="price-row"><h3>Puppy | Senior | Special Needs</h3><p><span>+$30</span> per night</p></article>
+<article class="price-row"><h3>Holiday</h3><p><span>$50</span> per night</p></article>
+<article class="price-row"><h3>Overnight Pet Care – Additional Dog</h3><p><span>$30</span> per night</p></article>
+<article class="price-row"><h3>Drop In – Additional Dog</h3><p><span>$15</span> per visit</p></article>
+<article class="price-row"><h3>Time Release Medication | Injections</h3><p><span>$20</span> per night</p></article>
+<article class="price-row"><h3>Vet Visit | Emergency Room</h3><p><span>$50</span> per hour</p></article>
+<article class="price-row"><h3>Delivery or Service Presence</h3><p><span>$40</span> per hour</p></article>
+<article class="price-row"><h3>30-Min Drop-In</h3><p><span>$45</span> per visit</p></article>
+<article class="price-row"><h3>60-Min Drop-In</h3><p><span>$60</span> per visit</p></article>
+<article class="price-row"><h3>Last-Minute Booking</h3><p><span>$50</span> per booking</p></article>
+<article class="price-row"><h3>Last-Minute Holiday Booking</h3><p><span>$75</span> per booking</p></article>
+<article class="price-row"><h3>Emergency Drop-In Surcharge</h3><p><span>$30</span> per booking</p></article>
+<article class="price-row"><h3>After-Hours Surcharge</h3><p><span>$30</span> per booking</p></article>
+<article class="price-row"><h3>Supply Run</h3><p><span>$50</span> per booking</p></article>
+</section>
+<section class="pricing-footer">
+<p>Ready to request care? Submit a booking request and I’ll be in touch soon to discuss your pup’s needs and confirm availability.</p>
+<a class="btn primary" href="./index.html#booking">Request a Booking</a>
+
+</section>
+</div>
+</main>
+</body>
+</html>
+
+<!-- V38: PDF button removed -->
