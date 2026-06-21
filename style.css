@@ -578,3 +578,139 @@ h1{
 .best-furend-badge *{
   font-size:0.88em !important;
 }
+
+
+/* V54 Brittany Signature preview */
+@import url('https://fonts.cdnfonts.com/css/brittany-signature');
+
+.hero-badge,
+.hero-image .hero-badge,
+.hero-card .hero-badge,
+.image-badge,
+.best-furend-badge,
+.hero-badge *,
+.hero-image .hero-badge *,
+.hero-card .hero-badge *,
+.image-badge *,
+.best-furend-badge *{
+  font-family:'Brittany Signature', cursive !important;
+  font-weight:400 !important;
+  letter-spacing:.01em !important;
+  line-height:1 !important;
+}
+
+.polaroid figcaption,
+.polaroid-name,
+.pet-name,
+.gallery-name,
+.photo-name,
+.polaroid-caption,
+.pet-card-name,
+.gallery-card figcaption,
+.pet-gallery figcaption,
+.polaroid-card figcaption{
+  font-family:'Brittany Signature', cursive !important;
+  font-weight:400 !important;
+  letter-spacing:.01em !important;
+}
+
+
+/* V57 compact hero badge final fix */
+.hero-banner{
+  overflow:visible !important;
+}
+.hero-badge{
+  position:absolute !important;
+  right:10px !important;
+  bottom:10px !important;
+  top:auto !important;
+  left:auto !important;
+
+  width:max-content !important;
+  min-width:0 !important;
+  max-width:calc(100% - 24px) !important;
+
+  padding:8px 18px !important;
+  border-radius:999px !important;
+  box-sizing:border-box !important;
+
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+  overflow:visible !important;
+
+  font-family:'Brittany Signature', cursive !important;
+  font-size:clamp(1.35rem,1.75vw,1.8rem) !important;
+  line-height:1.05 !important;
+  letter-spacing:.01em !important;
+
+  transform:rotate(-7deg) !important;
+  z-index:10 !important;
+}
+
+.hero-badge *{
+  font-family:'Brittany Signature', cursive !important;
+  font-size:inherit !important;
+  line-height:1.05 !important;
+  margin:0 !important;
+  padding:0 !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+}
+
+@media(max-width:700px){
+  .hero-badge{
+    right:8px !important;
+    bottom:8px !important;
+    padding:7px 14px !important;
+    font-size:1.25rem !important;
+    transform:rotate(-6deg) !important;
+    max-width:calc(100% - 20px) !important;
+  }
+}
+
+
+/* V59 actual pet-name font size fix */
+.polaroid figcaption,
+.polaroid .polaroid-name,
+.polaroid-name,
+.pet-name,
+.gallery-name,
+.photo-name,
+.polaroid-caption,
+.pet-card-name,
+.gallery-card figcaption,
+.pet-gallery figcaption,
+.polaroid-card figcaption,
+.gallery-polaroid figcaption,
+.gallery-item figcaption,
+.polaroid span,
+.polaroid p.name,
+.polaroid .name{
+  font-size: clamp(1.15rem, 1.55vw, 1.55rem) !important;
+  line-height: 1.05 !important;
+}
+
+/* Keep mobile pet names smaller too */
+@media(max-width:700px){
+  .polaroid figcaption,
+  .polaroid .polaroid-name,
+  .polaroid-name,
+  .pet-name,
+  .gallery-name,
+  .photo-name,
+  .polaroid-caption,
+  .pet-card-name,
+  .gallery-card figcaption,
+  .pet-gallery figcaption,
+  .polaroid-card figcaption,
+  .gallery-polaroid figcaption,
+  .gallery-item figcaption,
+  .polaroid span,
+  .polaroid p.name,
+  .polaroid .name{
+    font-size: 1.15rem !important;
+  }
+}
