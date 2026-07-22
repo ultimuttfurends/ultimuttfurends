@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UltiMutt Furends | Pet Care</title>
   <meta name="description" content="Personalized pet care built on trust, connection, and genuine love for every pet. Serving North Scottsdale." />
-  <link rel="shortcut icon" href="./favicon.ico?v=59" />
-  <link rel="icon" href="./favicon.ico?v=59" sizes="any" />
-  <link rel="icon" type="image/png" href="./favicon.png?v=59" />
-  <link rel="apple-touch-icon" href="./favicon.png?v=59" />
+  <link rel="shortcut icon" href="./favicon.ico?v=66" />
+  <link rel="icon" href="./favicon.ico?v=66" sizes="any" />
+  <link rel="icon" type="image/png" href="./favicon.png?v=66" />
+  <link rel="apple-touch-icon" href="./favicon.png?v=66" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Quicksand:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=59" />
+  <link rel="stylesheet" href="./style.css?v=66" />
 <style>
 /* V39 final cleanup: larger hero badge, hidden version text */
 .version-marker{display:none!important;}
@@ -260,6 +260,487 @@
   }
 }
 </style>
+<style>
+/* V61 mobile-only refinements + pricing links */
+.service-card{
+  text-decoration:none !important;
+  display:block;
+}
+
+@media (max-width: 700px){
+  /* 1) Smaller hero badge with less pink padding */
+  .hero-banner{ overflow:visible !important; }
+  .hero-badge{
+    position:absolute !important;
+    right:9px !important;
+    bottom:9px !important;
+    left:auto !important;
+    top:auto !important;
+    width:max-content !important;
+    min-width:0 !important;
+    max-width:72% !important;
+    padding:4px 10px !important;
+    border-radius:999px !important;
+    box-sizing:border-box !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    text-align:center !important;
+    white-space:nowrap !important;
+    overflow:visible !important;
+    font-size:.95rem !important;
+    line-height:1 !important;
+    transform:rotate(-6deg) !important;
+    z-index:10 !important;
+  }
+  .hero-badge *{
+    font-size:inherit !important;
+    line-height:1 !important;
+    margin:0 !important;
+    padding:0 !important;
+    white-space:nowrap !important;
+  }
+
+  /* 2) Pet polaroids: 2 per row on mobile */
+  .polaroid-grid{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+    gap:18px 14px !important;
+    width:92% !important;
+    max-width:520px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    align-items:start !important;
+  }
+  .polaroid-grid .polaroid{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 auto !important;
+    padding:8px 8px 12px !important;
+    box-sizing:border-box !important;
+    transform:none !important;
+  }
+  .polaroid-grid .polaroid img{
+    width:100% !important;
+    height:auto !important;
+    aspect-ratio:1 / 1.08 !important;
+    object-fit:cover !important;
+    border-radius:10px !important;
+  }
+  .polaroid-grid .polaroid figcaption{
+    font-size:1.05rem !important;
+    line-height:1 !important;
+    margin-top:5px !important;
+  }
+
+  /* 3) Pink testimonial arrows restored on mobile */
+  .testimonial-shell{
+    position:relative !important;
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+  .testimonial-shell .slide-btn,
+  .testimonial-shell .testimonial-arrow{
+    display:flex !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    pointer-events:auto !important;
+    position:absolute !important;
+    top:50% !important;
+    transform:translateY(-50%) !important;
+    width:38px !important;
+    height:38px !important;
+    border-radius:999px !important;
+    border:1px solid rgba(253,174,255,.75) !important;
+    background:#fdaeff !important;
+    color:#3a2d2d !important;
+    align-items:center !important;
+    justify-content:center !important;
+    z-index:30 !important;
+    font-size:1.35rem !important;
+    line-height:1 !important;
+    box-shadow:0 10px 26px rgba(58,45,45,.16) !important;
+  }
+  .testimonial-shell .prev{ left:0 !important; }
+  .testimonial-shell .next{ right:0 !important; }
+
+  /* 4) Pricing page mobile: centered narrower containers so paws show */
+  .pricing-wrap{
+    width:100% !important;
+    max-width:100% !important;
+  }
+  .pricing-hero{
+    width:88% !important;
+    max-width:500px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding-left:18px !important;
+    padding-right:18px !important;
+    box-sizing:border-box !important;
+  }
+  .pricing-list{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+  .price-row{
+    width:86% !important;
+    max-width:430px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding-left:18px !important;
+    padding-right:18px !important;
+    box-sizing:border-box !important;
+  }
+  .pricing-footer{
+    width:88% !important;
+    max-width:500px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    box-sizing:border-box !important;
+  }
+}
+</style>
+<style>
+/* V62 mobile final fixes */
+@media (max-width: 700px){
+  .testimonial-card{ transition: opacity .95s ease, visibility .95s ease !important; }
+  .testimonial-shell .slide-btn,
+  .testimonial-shell .testimonial-arrow{ touch-action: manipulation !important; }
+
+  .polaroid-grid .polaroid{
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease !important;
+    will-change: transform !important;
+  }
+  .polaroid-grid .polaroid:nth-child(4n+1){ transform: rotate(-2.4deg) !important; }
+  .polaroid-grid .polaroid:nth-child(4n+2){ transform: rotate(2deg) translateY(5px) !important; }
+  .polaroid-grid .polaroid:nth-child(4n+3){ transform: rotate(-1.4deg) translateY(-3px) !important; }
+  .polaroid-grid .polaroid:nth-child(4n+4){ transform: rotate(2.6deg) translateY(4px) !important; }
+  .polaroid-grid .polaroid:active,
+  .polaroid-grid .polaroid:hover{
+    transform: translateY(-6px) rotate(0deg) scale(1.025) !important;
+    box-shadow: 0 18px 38px rgba(53,42,42,.16) !important;
+    border-color: rgba(253,174,255,.75) !important;
+    z-index: 5 !important;
+  }
+  .polaroid-grid .polaroid img{ transition: transform .25s ease !important; }
+  .polaroid-grid .polaroid:active img,
+  .polaroid-grid .polaroid:hover img{ transform: scale(1.035) !important; }
+
+  .pricing-page{ padding-left: 0 !important; padding-right: 0 !important; }
+  .pricing-wrap{ width: 100% !important; max-width: 100% !important; }
+  .pricing-hero{
+    width: 82% !important;
+    max-width: 390px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .price-row{
+    width: 78% !important;
+    max-width: 350px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 10px 14px !important;
+    gap: 8px !important;
+  }
+  .price-row h3{ font-size: clamp(.95rem, 4.6vw, 1.1rem) !important; }
+  .price-row p{ font-size: .8rem !important; }
+  .price-row p span{ font-size: clamp(1.05rem, 5vw, 1.3rem) !important; }
+  .pricing-footer{
+    width: 82% !important;
+    max-width: 390px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .pricing-paw{ font-size: 2.1rem !important; }
+}
+</style>
+<style>
+/* V64 mobile-only testimonial + banner speed fix */
+@media(max-width:700px){
+  .soft-marquee,
+  .soft-marquee *,
+  .marquee,
+  .marquee *,
+  .marquee-track,
+  .soft-marquee-track,
+  .marquee-content,
+  .marquee-inner{
+    animation-duration:16s !important;
+  }
+
+  .testimonial-card{
+    transition:opacity .55s ease, visibility .55s ease !important;
+  }
+}
+</style>
+<style>
+/* V65 mobile hero + testimonial fixes */
+@media(max-width:700px){
+  /* Make the initial mobile hero shorter so image + badge appear before the rolling banner */
+  .hero{
+    min-height:auto !important;
+    padding:76px 18px 18px !important;
+    gap:14px !important;
+  }
+  .hero-copy{
+    gap:8px !important;
+  }
+  .hero-copy .eyebrow{
+    margin-bottom:0 !important;
+    font-size:.72rem !important;
+  }
+  .hero h1{
+    font-size:clamp(2.55rem, 14vw, 4rem) !important;
+    line-height:.86 !important;
+    margin:0 !important;
+  }
+  .mini-divider{
+    margin:4px auto 6px !important;
+    transform:scale(.82) !important;
+  }
+  .hero-subtitle{
+    font-size:.9rem !important;
+    line-height:1.35 !important;
+    margin:0 auto !important;
+    max-width:330px !important;
+  }
+  .hero-buttons{
+    gap:8px !important;
+    margin-top:4px !important;
+  }
+  .hero-buttons .btn{
+    padding:9px 14px !important;
+    font-size:.76rem !important;
+  }
+  .hero-image{
+    margin-top:0 !important;
+  }
+  .hero-banner{
+    max-width:330px !important;
+    margin:0 auto !important;
+  }
+  .hero-banner img{
+    aspect-ratio:1.02 / 1 !important;
+    height:auto !important;
+    max-height:285px !important;
+    object-fit:cover !important;
+  }
+  .hero-badge{
+    right:8px !important;
+    bottom:8px !important;
+    padding:4px 10px !important;
+    font-size:.95rem !important;
+  }
+
+  /* Testimonials: no stacked tap conflicts, calmer transition */
+  .testimonial-shell{
+    position:relative !important;
+  }
+  .testimonial-card{
+    transition:opacity .45s ease, visibility .45s ease !important;
+  }
+  .testimonial-shell .slide-btn{
+    cursor:pointer !important;
+    touch-action:manipulation !important;
+    -webkit-tap-highlight-color:transparent !important;
+  }
+
+  /* Restore/fix rolling banner speed on mobile */
+  .soft-marquee-track,
+  .soft-marquee .marquee-track,
+  .soft-marquee-track *,
+  .marquee-track,
+  .marquee-content,
+  .marquee-inner{
+    animation-duration:16s !important;
+  }
+}
+</style>
+<style>
+/* V66 mobile hero polish + smoother testimonials */
+@media(max-width:700px){
+  /* Remove awkward top gap and fit full hero before rolling banner */
+  .hero{
+    min-height:calc(100svh - 118px) !important;
+    padding:20px 18px 14px !important;
+    gap:10px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:flex-start !important;
+    align-items:center !important;
+  }
+
+  .hero-copy{
+    width:100% !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    text-align:center !important;
+    gap:0 !important;
+    margin:0 auto !important;
+  }
+
+  .hero-copy .eyebrow{
+    font-size:.68rem !important;
+    letter-spacing:.22em !important;
+    line-height:1.1 !important;
+    margin:0 0 5px !important;
+  }
+
+  .hero h1{
+    font-size:clamp(2.65rem, 13vw, 3.85rem) !important;
+    line-height:.88 !important;
+    letter-spacing:-.035em !important;
+    margin:0 auto !important;
+    max-width:355px !important;
+  }
+
+  .mini-divider{
+    margin:9px auto 8px !important;
+    transform:scale(.76) !important;
+    transform-origin:center !important;
+  }
+
+  .hero-subtitle{
+    font-size:.82rem !important;
+    line-height:1.28 !important;
+    max-width:320px !important;
+    margin:0 auto 9px !important;
+    letter-spacing:.025em !important;
+  }
+
+  .hero-buttons{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:8px !important;
+    margin:0 auto 8px !important;
+    width:100% !important;
+  }
+
+  .hero-buttons .btn{
+    padding:9px 13px !important;
+    font-size:.72rem !important;
+    line-height:1 !important;
+    min-height:38px !important;
+    border-radius:999px !important;
+  }
+
+  .hero-image{
+    width:100% !important;
+    margin:0 auto !important;
+    display:flex !important;
+    justify-content:center !important;
+  }
+
+  .hero-banner{
+    width:min(84vw, 330px) !important;
+    max-width:330px !important;
+    margin:0 auto !important;
+    border-radius:24px !important;
+    padding:8px !important;
+    box-sizing:border-box !important;
+  }
+
+  .hero-banner img{
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    aspect-ratio:1.13 / 1 !important;
+    object-fit:cover !important;
+    object-position:center !important;
+    border-radius:18px !important;
+    display:block !important;
+  }
+
+  .hero-badge{
+    right:8px !important;
+    bottom:8px !important;
+    width:max-content !important;
+    max-width:72% !important;
+    min-width:0 !important;
+    padding:4px 10px !important;
+    font-size:.9rem !important;
+    line-height:1 !important;
+    transform:rotate(-5deg) !important;
+    white-space:nowrap !important;
+  }
+
+  .hero-badge *{
+    font-size:inherit !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+  }
+
+  /* Keep rolling banner just after first mobile viewport */
+  .soft-marquee,
+  .marquee{
+    margin-top:0 !important;
+  }
+
+  /* Smoother testimonial fade on mobile */
+  .testimonial-card{
+    transition:
+      opacity .85s ease,
+      visibility .85s ease,
+      transform .85s ease !important;
+    transform:translateY(8px) scale(.985) !important;
+  }
+
+  .testimonial-card.active{
+    transform:translateY(0) scale(1) !important;
+  }
+
+  .testimonial-shell .slide-btn,
+  .testimonial-shell .testimonial-arrow{
+    transition:transform .25s ease, background .25s ease, box-shadow .25s ease !important;
+  }
+
+  .testimonial-shell .slide-btn:active,
+  .testimonial-shell .testimonial-arrow:active{
+    transform:translateY(-50%) scale(.94) !important;
+  }
+
+  /* Banner speed on mobile */
+  .soft-marquee-track,
+  .soft-marquee .marquee-track,
+  .soft-marquee-track *,
+  .marquee-track,
+  .marquee-content,
+  .marquee-inner{
+    animation-duration:14s !important;
+  }
+}
+
+/* Slightly shorter phones */
+@media(max-width:700px) and (max-height:760px){
+  .hero{
+    padding-top:14px !important;
+    gap:8px !important;
+  }
+  .hero h1{
+    font-size:clamp(2.45rem, 12.2vw, 3.55rem) !important;
+  }
+  .mini-divider{
+    margin:7px auto 6px !important;
+    transform:scale(.7) !important;
+  }
+  .hero-subtitle{
+    font-size:.78rem !important;
+    margin-bottom:7px !important;
+  }
+  .hero-buttons .btn{
+    min-height:36px !important;
+    padding:8px 12px !important;
+    font-size:.7rem !important;
+  }
+  .hero-banner{
+    width:min(80vw, 312px) !important;
+  }
+}
+</style>
 </head>
 <body>
   <!-- ULTIMUTT_V27_ROOT_ASSET_PATHS -->
@@ -327,30 +808,30 @@
         <p>Thoughtful care designed around your pet’s comfort, routine, and happiness.</p>
       </div>
       <div class="service-grid">
-        <button class="service-card reveal" type="button" data-service="overnight" aria-label="Learn more about Overnight Pet Care">
+        <a class="service-card reveal" href="./service-pricing.html" aria-label="View pricing for Overnight Pet Care">
           
           <h3>Overnight Pet Care</h3>
           <p>Comfortable in-home care while you’re away.</p>
           <small>Learn more →</small>
-        </button>
-        <button class="service-card reveal" type="button" data-service="constant" aria-label="Learn more about 24/7 Constant Care">
+        </a>
+        <a class="service-card reveal" href="./service-pricing.html" aria-label="View pricing for 24/7 Constant Care">
           
           <h3>24/7 Constant Care</h3>
           <p>Extra attentive care for pets who need more support.</p>
           <small>Learn more →</small>
-        </button>
-        <button class="service-card reveal" type="button" data-service="dropin" aria-label="Learn more about Drop-In Visits">
+        </a>
+        <a class="service-card reveal" href="./service-pricing.html" aria-label="View pricing for Drop-In Visits">
           
           <h3>Drop-In Visits</h3>
           <p>Feeding, potty breaks, playtime, and love.</p>
           <small>Learn more →</small>
-        </button>
-        <button class="service-card reveal" type="button" data-service="special" aria-label="Learn more about Special Needs Care">
+        </a>
+        <a class="service-card reveal" href="./service-pricing.html" aria-label="View pricing for Special Needs Care">
           
           <h3>Special Needs Care</h3>
           <p>Support for puppies, seniors, anxiety, and medications.</p>
           <small>Learn more →</small>
-        </button>
+        </a>
       </div>
     </section>
 
@@ -405,7 +886,7 @@
         <h2>Trusted by pets. Loved by their people.</h2>
       </div>
       <div class="testimonial-shell reveal">
-        <button class="slide-btn prev" aria-label="Previous testimonial">‹</button>
+        <button class="slide-btn testimonial-arrow prev" aria-label="Previous testimonial">‹</button>
         <div class="testimonial-card active">
           <p>“Deepa has done a spectacular job with Lilly—we are so impressed. She looks so happy. Thank you, Deepa!”</p>
           <strong>— Linda, Dog Mom to Lilly</strong>
@@ -430,7 +911,7 @@
           <p>“Can't thank you enough for the amazing care you give Ally and Dash. It's the best feeling being on vacation knowing they're happy. It makes me so happy knowing they're in the best hands, as always.”</p>
           <strong>— Kendra, Dog Mom to Ally & Dash</strong>
         </div>
-        <button class="slide-btn next" aria-label="Next testimonial">›</button>
+        <button class="slide-btn testimonial-arrow next" aria-label="Next testimonial">›</button>
       </div>
     </section>
 
@@ -538,6 +1019,6 @@
     <p>© <span id="year"></span> UltiMutt Furends · Care Beyond Measure</p>
   </footer>
 
-  <script src="./script.js?v=59"></script>
+  <script src="./script.js?v=66"></script>
 </body>
 </html>
